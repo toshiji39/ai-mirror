@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI日記コーチ</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, sans-serif; background: #0f0f1a; color: #f0f0f0; min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 40px 20px; }
+    .card { background: #1a1a2e; border-radius: 24px; padding: 36px 28px; max-width: 480px; width: 100%; text-align: center; box-shadow: 0 8px 40px rgba(0,0,0,0.4); }
+    .emoji { font-size: 56px; margin-bottom: 16px; }
+    h1 { font-size: 24px; font-weight: 700; margin-bottom: 8px; color: #fff; }
+    .sub { font-size: 14px; color: #aaa; margin-bottom: 32px; line-height: 1.6; }
+    .steps { text-align: left; margin-bottom: 32px; background: #12122a; border-radius: 16px; padding: 20px; }
+    .step { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 16px; }
+    .step:last-child { margin-bottom: 0; }
+    .step-num { background: #6c63ff; color: #fff; font-size: 13px; font-weight: 700; border-radius: 50%; width: 26px; height: 26px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .step-text { font-size: 14px; line-height: 1.6; color: #ddd; }
+    .step-text strong { color: #fff; }
+    .btn { display: block; width: 100%; padding: 18px; border-radius: 16px; border: none; font-size: 17px; font-weight: 700; cursor: pointer; text-decoration: none; margin-bottom: 12px; }
+    .btn-main { background: linear-gradient(135deg, #6c63ff, #48c774); color: #fff; }
+    .btn-copy { background: #2a2a3e; color: #ccc; font-size: 14px; padding: 14px; }
+    .note { font-size: 12px; color: #666; margin-top: 20px; line-height: 1.6; }
+    .toast { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%) translateY(80px); background: #48c774; color: #fff; padding: 12px 24px; border-radius: 99px; font-size: 14px; font-weight: 600; transition: transform 0.3s ease; pointer-events: none; }
+    .toast.show { transform: translateX(-50%) translateY(0); }
+  </style>
+</head>
+<body>
+<div class="card">
+  <div class="emoji">🌙</div>
+  <h1>AI日記コーチ</h1>
+  <p class="sub">ChatGPTがあなた専属の日記コーチになります。<br>ボタンを押すだけで今日から始められます。</p>
+  <div class="steps">
+    <div class="step"><div class="step-num">1</div><div class="step-text">下の<strong>「ChatGPTで始める」</strong>ボタンをタップ</div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-text">ChatGPTが開いたら<strong>そのまま送信ボタン</strong>を押す</div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-text">コーチが話しかけてきたら<strong>なんでも話しかけるだけ</strong>！</div></div>
+  </div>
+  <a class="btn btn-main" href="#" onclick="openChatGPT(); return false;">🚀 ChatGPTで始める</a>
+  <button class="btn btn-copy" onclick="copyPrompt()">📋 プロンプトだけコピーする</button>
+  <p class="note">※ ChatGPTのアカウントが必要です（無料でOK）<br>※ このページはブックマークしておくと便利です</p>
+</div>
+<div class="toast" id="toast">コピーしました！</div>
+<script>
+const P="あなたは私の専属AI日記コーチです。毎日の出来事や気持ちを会話で引き出し、日記にまとめてください。友達のような話し方で、短い質問を1つずつ投げかけてください。私が「日記にして」と言ったら今日の日記をまとめ、「今週を振り返って」で週次レポート、「目標を設定したい」で目標管理、「今月をまとめて」で月次まとめを作ってください。最初に必ず言ってください：「こんにちは！あなたの日記コーチだよ😊 今日からよろしくね！まず今日どんな一日だったか、なんでもいいから話してみて！」";
+function openChatGPT(){navigator.clipboard.writeText(P).then(()=>{showToast('コピーしました！ChatGPTに貼り付けて送信してください');setTimeout(()=>{window.open('https://chatgpt.com/','_blank');},800);}).catch(()=>window.open('https://chatgpt.com/','_blank'));}
+function copyPrompt(){navigator.clipboard.writeText(P).then(()=>showToast('コピーしました！'));}
+function showToast(m){const t=document.getElementById('toast');t.textContent=m;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2500);}
+</script>
+</body>
+</html>
