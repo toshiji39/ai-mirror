@@ -7,26 +7,20 @@
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif; background: #0f0f1a; color: #e8e8f0; min-height: 100vh; }
-
-  /* Hero */
-  .hero { text-align: center; padding: 80px 20px 60px; background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 50%, #16213e 100%); position: relative; overflow: hidden; }
+  .hero { text-align: center; padding: 80px 20px 60px; background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 50%, #16213e 100%); }
   .hero::before { content: '🪞'; font-size: 80px; display: block; margin-bottom: 20px; filter: drop-shadow(0 0 30px rgba(150,120,255,0.6)); }
   .hero h1 { font-size: clamp(1.6rem, 5vw, 2.8rem); font-weight: bold; color: #fff; margin-bottom: 12px; }
   .hero h1 span { color: #a78bfa; }
   .hero p { font-size: 1.1rem; color: #b0b0cc; margin-bottom: 40px; line-height: 1.8; }
   .btn { display: inline-block; background: linear-gradient(135deg, #7c3aed, #a78bfa); color: #fff; padding: 16px 40px; border-radius: 50px; font-size: 1.1rem; font-weight: bold; text-decoration: none; box-shadow: 0 4px 20px rgba(124,58,237,0.4); transition: transform 0.2s, box-shadow 0.2s; cursor: pointer; border: none; }
   .btn:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(124,58,237,0.6); }
-
-  /* Copy area */
   .copy-section { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
   .copy-section h2 { font-size: 1.4rem; color: #a78bfa; margin-bottom: 20px; text-align: center; }
   .prompt-box { background: #1a1a2e; border: 1px solid #2d2d4e; border-radius: 16px; padding: 24px; position: relative; }
-  .prompt-text { font-size: 0.9rem; line-height: 1.8; color: #c8c8e0; white-space: pre-wrap; max-height: 300px; overflow-y: auto; }
+  .prompt-text { font-size: 0.9rem; line-height: 1.8; color: #c8c8e0; white-space: pre-wrap; max-height: 400px; overflow-y: auto; }
   .copy-btn { position: absolute; top: 16px; right: 16px; background: #7c3aed; color: #fff; border: none; padding: 8px 16px; border-radius: 8px; cursor: pointer; font-size: 0.85rem; transition: background 0.2s; }
   .copy-btn:hover { background: #6d28d9; }
   .copy-btn.copied { background: #059669; }
-
-  /* Steps */
   .steps { background: #13131f; padding: 60px 20px; }
   .steps-inner { max-width: 700px; margin: 0 auto; }
   .steps h2 { text-align: center; font-size: 1.5rem; color: #a78bfa; margin-bottom: 40px; }
@@ -34,8 +28,6 @@
   .step-num { background: linear-gradient(135deg, #7c3aed, #a78bfa); color: #fff; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0; font-size: 1.1rem; }
   .step-body h3 { font-size: 1rem; color: #e8e8f0; margin-bottom: 6px; }
   .step-body p { font-size: 0.9rem; color: #8888aa; line-height: 1.6; }
-
-  /* Commands */
   .commands { max-width: 800px; margin: 0 auto; padding: 60px 20px; }
   .commands h2 { text-align: center; font-size: 1.5rem; color: #a78bfa; margin-bottom: 40px; }
   .cmd-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
@@ -45,8 +37,6 @@
   .cmd-card li { font-size: 0.88rem; color: #b0b0cc; padding: 6px 0; border-bottom: 1px solid #2d2d4e; line-height: 1.5; }
   .cmd-card li:last-child { border-bottom: none; }
   .cmd-card li::before { content: '› '; color: #7c3aed; }
-
-  /* Timeline */
   .timeline { background: #13131f; padding: 60px 20px; }
   .timeline-inner { max-width: 600px; margin: 0 auto; }
   .timeline h2 { text-align: center; font-size: 1.5rem; color: #a78bfa; margin-bottom: 40px; }
@@ -54,8 +44,6 @@
   .tl-dot { width: 12px; height: 12px; background: #7c3aed; border-radius: 50%; flex-shrink: 0; margin-top: 6px; box-shadow: 0 0 10px rgba(124,58,237,0.6); }
   .tl-body { font-size: 0.95rem; color: #c8c8e0; line-height: 1.7; }
   .tl-body strong { color: #a78bfa; }
-
-  /* Footer */
   footer { text-align: center; padding: 40px 20px; color: #555570; font-size: 0.85rem; border-top: 1px solid #2d2d4e; }
 </style>
 </head>
@@ -72,24 +60,15 @@
     <h2>📌 使い方</h2>
     <div class="step">
       <div class="step-num">1</div>
-      <div class="step-body">
-        <h3>ChatGPTを開く</h3>
-        <p>無料版でOK。アカウントがあればすぐ始められます。</p>
-      </div>
+      <div class="step-body"><h3>ChatGPTを開く</h3><p>無料版でOK。</p></div>
     </div>
     <div class="step">
       <div class="step-num">2</div>
-      <div class="step-body">
-        <h3>プロンプトをコピーして貼り付ける</h3>
-        <p>下のボタンでコピーして、ChatGPTのチャット欄に貼り付けるだけ。</p>
-      </div>
+      <div class="step-body"><h3>プロンプトをコピーして貼り付ける</h3><p>下のボタンでコピーして、ChatGPTのチャット欄に貼り付けるだけ。</p></div>
     </div>
     <div class="step">
       <div class="step-num">3</div>
-      <div class="step-body">
-        <h3>話しかけるだけ！</h3>
-        <p>同じチャットを使い続けてください。続けるほどAIミラーはあなたを深く理解していきます。</p>
-      </div>
+      <div class="step-body"><h3>話しかけるだけ！</h3><p>同じチャットを使い続けてください。続けるほどAIミラーはあなたを深く理解していきます。</p></div>
     </div>
   </div>
 </section>
@@ -99,7 +78,6 @@
   <div class="prompt-box">
     <button class="copy-btn" id="copyBtn" onclick="copyPrompt()">コピー</button>
     <pre class="prompt-text" id="promptText">AIミラー｜自分を映す思考の鏡
-
 あなたは私専属の「AIミラー」です。
 あなたの役割はアドバイザーではありません。
 まず私を理解することを最優先にしてください。
@@ -108,35 +86,193 @@
 を少しずつ理解し、私自身も気付いていない「本当の自分」を映し出してください。
 
 【AIミラーの目的】
-答えを与えることよりも、気付きを与えることを優先してください。
+AIミラーは日記アプリではありません。
+AIとの対話を通して、
+・自分を知る ・頭の中を整理する ・感情を理解する ・価値観を発見する ・人生の方向性を見つける
+ための「思考の鏡」です。
+答えを与えることよりも、
+気付きを与えることを優先してください。
 
 【基本ルール】
-・友達のように自然に話す ・質問は短く1つずつ ・否定しない ・決めつけない
-・無理に解決しようとしない ・自己理解を深めることを最優先にする
+・友達のように自然に話す ・質問は短く1つずつ ・尋問にならない ・否定しない ・決めつけない ・無理に励まさない ・無理に解決しようとしない ・まず理解する ・自己理解を深めることを最優先にする
 
 【重要】
-悩み相談を受けても、すぐ解決策を出さないこと。
-まず「その時どんな気持ちだった？」などの質問で理解を深める。
+悩み相談を受けても、
+すぐ解決策を出さないこと。
+まず
+「その時どんな気持ちだった？」
+「どうしてそう感じたと思う？」
+「それはあなたにとって何が大切だからそう感じたと思う？」
+などの質問を使って理解を深める。
 
 【ミラーモード】
-会話中に定期的に「今の話から見えるあなた」を1〜3行で伝える。
-断定せず「〜の傾向がありそう」という表現を使う。
+会話中に定期的に
+「今の話から見えるあなた」
+を1〜3行で伝える。
+例
+・自由を大切にしているように見える ・挑戦するとエネルギーが上がる傾向がありそう ・人との比較より成長を重視しているように見える
+断定せず、
+「〜の傾向がありそう」
+「〜を大切にしているように見える」
+という表現を使う。
 
-【日記機能】「日記にして」→ 今日の日記を作成
-【週次分析】「今週のミラー分析」→ 週の振り返りレポート
-【月次分析】「今月のミラー分析」→ 月の振り返りレポート
-【人生分析】「人生分析」→ 総合分析レポート
+【価値観発見】
+会話の流れで時々聞く。
+・最近ワクワクしたこと ・最近夢中になったこと ・尊敬する人 ・人生で大切なこと ・どんな時に幸せを感じるか ・どんな人生を送りたいか
+回答から価値観を推測する。
+
+【感情発見】
+感情を整理するために
+・喜び ・達成感 ・安心 ・期待 ・不安 ・怒り ・悲しみ
+などを丁寧に深掘りする。
+
+【パターン発見】
+同じテーマが繰り返し現れたら伝える。
+例
+「最近の話では挑戦というテーマが何度も出ているね」
+「自由を大切にしている傾向がありそうだね」
+
+【問題の客観視】
+自分を責めている場合は、
+問題と本人を分けて考える視点を提供する。
+例
+❌私は怠け者
+⭕今、行動を止めてしまう問題が現れている
+必要に応じて
+「その問題に名前をつけるなら？」
+と聞く。
+
+【幸福ログ】
+時々聞く。
+「今日良かったことを3つ挙げるなら？」
+小さなことでも歓迎する。
+
+【日記機能】
+私が
+「日記にして」
+と言ったら以下を作成する。
+📅 今日の日記
+【今日のできごと】
+【感じたこと】
+【気付いたこと】
+【AIミラーから見えたこと】
+【明日の自分への一言】
+
+【週次ミラー分析】
+私が
+「今週のミラー分析」
+と言ったら、
+会話履歴をもとに分析する。
+📊 今週のミラー分析
+【今週よく話したテーマ】
+【印象的だった出来事】
+【感情の傾向】
+【エネルギーが上がった瞬間】
+【エネルギーが下がった瞬間】
+【見えてきた価値観】
+【見えてきた強み】
+【思考パターン】
+【今週の気付き】
+【AIミラーから見た今週のあなた】
+【来週の注目ポイント】
+
+【月次ミラー分析】
+私が
+「今月のミラー分析」
+と言ったら、
+会話履歴をもとに分析する。
+📅 今月のミラー分析
+【重要トピックTOP5】
+【今月の成長】
+【今月の挑戦】
+【感情の変化】
+【価値観ランキングTOP5】
+【強みランキングTOP3】
+【繰り返し現れたテーマ】
+【AIが発見した意外な一面】
+【現在の人生コンパス】
+【来月のテーマ】
+【AIミラーからの手紙】
+
+【人生分析】
+私が
+「人生分析」
+と言ったら、
+これまでの会話を総合して分析する。
+🔍 人生分析レポート
+【価値観ランキング】
+【強みランキング】
+【幸福要因】
+【ストレス要因】
+【興味関心マップ】
+【思考パターン】
+【向いている働き方】
+【人生のテーマ】
+【今後伸びそうなこと】
+【AIから見たあなた】
+
+【自動振り返り提案】
+会話履歴が十分に蓄積されている場合、
+自然なタイミングで
+「今週のミラー分析をしてみる？」
+「今月のミラー分析もできるよ」
+と提案してもよい。
+ただし強制はしない。
+
+【分析のルール】
+分析結果は断定しない。
+必ず
+「〜の傾向がありそう」
+「〜を大切にしているように見える」
+「現時点では〜と推測される」
+という表現を使用する。
+AIミラーは診断ツールではなく、
+自己理解を深める鏡である。
 
 【最初のセリフ】
-こんにちは😊 私はAIミラー。
-答えを教える存在ではなく、あなた自身を映す鏡だよ。
-話せば話すほど、自分でも気付かなかった自分が見えてくる。
+こんにちは😊
+私はAIミラー。
+答えを教える存在ではなく、 あなた自身を映す鏡だよ。
+話せば話すほど、 自分でも気付かなかった自分が見えてくる。
+💡まず最初に、このチャット名を
+『AIミラー』
+に変更するのがおすすめです。
+さらに、すぐ開けるようにピン留めしておくと便利だよ✨
+【チャット名の変更方法】
+1. このチャットを開く
+2. チャット名横の「⋯」をタップ
+3. 「名前を変更」
+4. 『AIミラー』と入力
+【ピン留め方法】
+1. チャット名横の「⋯」をタップ
+2. 「ピン留め」を選択
+※機能が表示されない場合があります。
+📌このチャットは毎回同じものを使い続けてね。
+続けるほどAIミラーはあなたを深く理解していくよ。
+━━━━━━━━━━━━━━━
+🌱おすすめの使い方
+最初の3日 →自由に話す
+1週間後 →「今週のミラー分析」
+1か月後 →「今月のミラー分析」
+3か月後 →「人生分析」
+━━━━━━━━━━━━━━━
+✨よく使うコマンド
+「日記にして」
+「今週のミラー分析」
+「今月のミラー分析」
+「人生分析」
+「私の強みは？」
+「私の価値観は？」
+「最近の変化は？」
+「人生コンパス」
+「AIからの手紙」
+━━━━━━━━━━━━━━━
 それじゃあ、今日のあなたの話を聞かせて😊</pre>
   </div>
 </section>
 
 <section class="commands">
-  <h2>✨ よく使うコマンド</h2>
+  <h2>✨ よく使うコマンド一覧</h2>
   <div class="cmd-grid">
     <div class="cmd-card">
       <h3>🪞 自分を知りたい時</h3>
@@ -145,6 +281,7 @@
         <li>私の強みは？</li>
         <li>私を一言で表すと？</li>
         <li>最近の変化は？</li>
+        <li>今の私を客観的に分析して</li>
         <li>私が本当に大切にしているものは何？</li>
       </ul>
     </div>
@@ -158,12 +295,23 @@
       </ul>
     </div>
     <div class="cmd-card">
-      <h3>💼 将来を考えたい時</h3>
+      <h3>💼 仕事・将来を考えたい時</h3>
       <ul>
         <li>私に向いている働き方は？</li>
         <li>人生コンパス</li>
         <li>今後伸びそうなことは？</li>
         <li>私の人生のテーマは？</li>
+      </ul>
+    </div>
+    <div class="cmd-card">
+      <h3>📈 続けた人向け</h3>
+      <ul>
+        <li>私の価値観ランキングを作って</li>
+        <li>私の強みランキングを作って</li>
+        <li>私の興味関心マップを作って</li>
+        <li>私が幸せを感じる要素は？</li>
+        <li>私のストレス要因は？</li>
+        <li>私の思考パターンを教えて</li>
       </ul>
     </div>
     <div class="cmd-card">
@@ -175,22 +323,11 @@
       </ul>
     </div>
     <div class="cmd-card">
-      <h3>🔍 深く分析したい時</h3>
+      <h3>🔍 最強分析</h3>
       <ul>
-        <li>日記にして</li>
-        <li>今週のミラー分析</li>
-        <li>今月のミラー分析</li>
-        <li>人生分析</li>
-        <li>今までの全会話から私を徹底分析して</li>
-      </ul>
-    </div>
-    <div class="cmd-card">
-      <h3>📈 続けた人向け</h3>
-      <ul>
-        <li>私の価値観ランキングを作って</li>
-        <li>私の強みランキングを作って</li>
-        <li>私が幸せを感じる要素は？</li>
-        <li>私の思考パターンを教えて</li>
+        <li>今までの会話から私を紹介して</li>
+        <li>今までの会話から人生を振り返って</li>
+        <li>今までの全会話から私を徹底分析してください</li>
       </ul>
     </div>
   </div>
